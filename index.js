@@ -15,7 +15,7 @@ const app = express();
 app.use(bodyParser.json());
 
 // Création d'une entité
-app.post('/api/entities', async (req, res) => {
+app.post('/api/schools', async (req, res) => {
   try {
     const entityData = req.body;
     const key = datastore.key('school');
@@ -34,7 +34,7 @@ app.post('/api/entities', async (req, res) => {
   }
 });
 
-app.get('/api/entities', async (req, res) => {
+app.get('/api/schools', async (req, res) => {
     try {
       const query = datastore.createQuery("school");
       const [items] = await datastore.runQuery(query);
@@ -47,7 +47,7 @@ app.get('/api/entities', async (req, res) => {
   });
 
 // Récupération d'une entité par ID
-app.get('/api/entities/:id', async (req, res) => {
+app.get('/api/schools/:id', async (req, res) => {
   try {
     const query = datastore.createQuery("school");
     const [items] = await datastore.runQuery(query);
@@ -62,7 +62,7 @@ app.get('/api/entities/:id', async (req, res) => {
 });
 
 // Mise à jour d'une entité
-app.put('/api/entities/:id', async (req, res) => {
+app.put('/api/schools/:id', async (req, res) => {
   try {
     const entityId = parseInt(req.params.id, 10);
     const entityData = req.body;
@@ -89,7 +89,7 @@ app.put('/api/entities/:id', async (req, res) => {
 });
 
 // Suppression d'une entité
-app.delete('/api/entities/:id', async (req, res) => {
+app.delete('/api/schools/:id', async (req, res) => {
   try {
     const entityId = parseInt(req.params.id, 10);
 

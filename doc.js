@@ -5,7 +5,7 @@
  *   version: 1.0.0
  *   title: API Documentation
  * paths:
- *   /api/entities:
+ *   /api/schools:
  *     post:
  *       summary: Créer une entité
  *       requestBody:
@@ -26,7 +26,7 @@
  *             type: array
  *             items:
  *               $ref: '#/definitions/Entity'
- *   /api/entities/{id}:
+ *   /api/schools/{id}:
  *     get:
  *       summary: Récupérer une entité par ID
  *       parameters:
