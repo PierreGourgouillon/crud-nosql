@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const csv = require('csv-parser');
 const { v4: uuidv4 } = require("uuid")
+const swaggerUi = require('swagger-ui-express');
+const swaggerSpec = require('./swagger.js');
 
 // Instanciation du client Datastore
 const datastore = new Datastore({ keyFilename: "credentials.json" })
@@ -105,6 +107,8 @@ app.delete('/api/entities/:id', async (req, res) => {
     res.status(500).json({ error: 'Erreur lors de la suppression de l\'entité' });
   }
 });
+
+app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 // Démarrage du serveur
 app.listen(3000, () => {
