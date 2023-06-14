@@ -58,7 +58,9 @@ brew install git
     
 5.  Ajoutez la clé SSH à votre compte sur GitHub. Pour plus d’informations, consultez « [Ajout d’une nouvelle clé SSH à votre compte GitHub](https://docs.github.com/fr/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account) ».
 
+## Avant de commencer
 
+Il vous faut un compte sur Google Cloud Datastore puis mettre le fichier credentials.json à la racine du projet
 
 ## Accéder au repo
 
